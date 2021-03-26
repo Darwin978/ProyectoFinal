@@ -43,16 +43,29 @@ public class ControladorServicios {
         vista.getBtnGuardar_Act().addActionListener(al -> Editar_Servicio());
         vista.getBtnEliminar().addActionListener(al -> Eliminar_Servicio());
 
-        KeyListener kl = new KeyListener() {
+        KeyListener kc = new KeyListener() {
             @Override
             public void keyTyped(KeyEvent ke) {
                 
-                char codigo = ke.getKeyChar();
+                   char codigo = ke.getKeyChar();
                 if ((codigo < '0' | codigo > '9') | (vista.getTxtCodigo().getText().length() >= 4)) {
                     ke.consume();
                 }
+//                char Nombres_S = ke.getKeyChar();
+//               if (((Nombres_S < 'a' | Nombres_S > 'z') & (Nombres_S < 'A' | Nombres_S > 'Z') & (Nombres_S!=45)& (Nombres_S != KeyEvent.VK_SPACE)) | (vista.getTxtNombre().getText().length() >= 50)) {
+//                    ke.consume();
+//                }
+//                 char Descripcion = ke.getKeyChar();
+//                if (((Descripcion < 'a' | Descripcion > 'z') & (Descripcion < 'A' | Descripcion > 'Z') & (Descripcion < '0' | Descripcion > '9') & (Descripcion != 45) & (Descripcion != KeyEvent.VK_SPACE)) | (vista.getTxtDescripcion().getText().length() >= 100)) {
+//                    ke.consume();
+//                }
+//                char Precio = ke.getKeyChar();
+//            if ((Precio < '0' | Precio > '9') &(Precio!=46) | (vista.getTxtPrecio().getText().length() >= 5)) {
+//                ke.consume();
+//            }
+            
             }
-
+            
             @Override
             public void keyPressed(KeyEvent ke) {
 
@@ -64,11 +77,200 @@ public class ControladorServicios {
             }
 
         };
-        vista.getTxtBuscar().addKeyListener(kl);
-        vista.getTxtCodigo().addKeyListener(kl);
+        KeyListener kca = new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent ke) {
+                
+                   char codigo = ke.getKeyChar();
+                if ((codigo < '0' | codigo > '9') | (vista.getTxtCod_Act().getText().length() >= 4)) {
+                    ke.consume();
+                }
+//                char Nombres_S = ke.getKeyChar();
+//               if (((Nombres_S < 'a' | Nombres_S > 'z') & (Nombres_S < 'A' | Nombres_S > 'Z') & (Nombres_S!=45)& (Nombres_S != KeyEvent.VK_SPACE)) | (vista.getTxtNombre().getText().length() >= 50)) {
+//                    ke.consume();
+//                }
+//                 char Descripcion = ke.getKeyChar();
+//                if (((Descripcion < 'a' | Descripcion > 'z') & (Descripcion < 'A' | Descripcion > 'Z') & (Descripcion < '0' | Descripcion > '9') & (Descripcion != 45) & (Descripcion != KeyEvent.VK_SPACE)) | (vista.getTxtDescripcion().getText().length() >= 100)) {
+//                    ke.consume();
+//                }
+//                char Precio = ke.getKeyChar();
+//            if ((Precio < '0' | Precio > '9') &(Precio!=46) | (vista.getTxtPrecio().getText().length() >= 5)) {
+//                ke.consume();
+//            }
+            
+            }
+            
+            @Override
+            public void keyPressed(KeyEvent ke) {
 
+            }
+
+            @Override
+            public void keyReleased(KeyEvent ke) {
+                cargaLista(vista.getTxtBuscar().getText());
+            }
+
+        };
+        KeyListener kn = new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent ke) {
+                
+               
+                char Nombres_S = ke.getKeyChar();
+               if (((Nombres_S < 'a' | Nombres_S > 'z') & (Nombres_S < 'A' | Nombres_S > 'Z') & (Nombres_S!=45)& (Nombres_S != KeyEvent.VK_SPACE)) | (vista.getTxtNombre().getText().length() >= 50)) {
+                    ke.consume();
+                }
+              }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+              
+            }
+         };
+        KeyListener kna = new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent ke) {
+                
+               
+                char Nombres_S = ke.getKeyChar();
+               if (((Nombres_S < 'a' | Nombres_S > 'z') & (Nombres_S < 'A' | Nombres_S > 'Z') & (Nombres_S!=45)& (Nombres_S != KeyEvent.VK_SPACE)) | (vista.getTxtNombre_Act().getText().length() >= 50)) {
+                    ke.consume();
+                }
+              }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+              
+            }
+         };
+        KeyListener kd = new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent ke) {
+                 char Descripcion = ke.getKeyChar();
+                if (((Descripcion < 'a' | Descripcion > 'z') & (Descripcion < 'A' | Descripcion > 'Z') & (Descripcion < '0' | Descripcion > '9') & (Descripcion != 45) & (Descripcion != KeyEvent.VK_SPACE)) | (vista.getTxtDescripcion().getText().length() >= 250)) {
+                    ke.consume();
+                }
+              }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+              
+            }
+         };
+        KeyListener kda = new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent ke) {
+                 char Descripcion = ke.getKeyChar();
+                if (((Descripcion < 'a' | Descripcion > 'z') & (Descripcion < 'A' | Descripcion > 'Z') & (Descripcion < '0' | Descripcion > '9') & (Descripcion != 45) & (Descripcion != KeyEvent.VK_SPACE)) | (vista.getTxtDescrip_Act().getText().length() >= 250)) {
+                    ke.consume();
+                }
+              }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+              
+            }
+         };
+        KeyListener kp = new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent ke) {
+            char Precio = ke.getKeyChar();
+            if ((Precio < '0' | Precio > '9') &(Precio!=46) | (vista.getTxtPrecio().getText().length() >= 5)) {
+                ke.consume();
+            }
+              }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+              
+            }
+         };
+        KeyListener kpa = new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent ke) {
+            char Precio = ke.getKeyChar();
+            if ((Precio < '0' | Precio > '9') &(Precio!=46) | (vista.getTxtPrecio_Act().getText().length() >= 5)) {
+                ke.consume();
+            }
+              }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+              
+            }
+         };
+        KeyListener kb = new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent ke) {
+                
+//                   char codigo = ke.getKeyChar();
+//                if ((codigo < '0' | codigo > '9') | (vista.getTxtCodigo().getText().length() >= 4)) {
+//                    ke.consume();
+//                }
+////                char Nombres_S = ke.getKeyChar();
+////               if (((Nombres_S < 'a' | Nombres_S > 'z') & (Nombres_S < 'A' | Nombres_S > 'Z') & (Nombres_S!=45)& (Nombres_S != KeyEvent.VK_SPACE)) | (vista.getTxtNombre().getText().length() >= 50)) {
+////                    ke.consume();
+////                }
+//                 char Descripcion = ke.getKeyChar();
+//                if (((Descripcion < 'a' | Descripcion > 'z') & (Descripcion < 'A' | Descripcion > 'Z') & (Descripcion < '0' | Descripcion > '9') & (Descripcion != 45) & (Descripcion != KeyEvent.VK_SPACE)) | (vista.getTxtDescripcion().getText().length() >= 100)) {
+//                    ke.consume();
+//                }
+//                char Precio = ke.getKeyChar();
+//            if ((Precio < '0' | Precio > '9') &(Precio!=46) | (vista.getTxtPrecio().getText().length() >= 5)) {
+//                ke.consume();
+//            }
+            
+            }
+            
+            @Override
+            public void keyPressed(KeyEvent ke) {
+
+            }
+
+            @Override
+            public void keyReleased(KeyEvent ke) {
+                cargaLista(vista.getTxtBuscar().getText());
+            }
+
+        };
+        
+            vista.getTxtNombre().addKeyListener(kn);
+            vista.getTxtBuscar().addKeyListener(kb);
+            vista.getTxtCodigo().addKeyListener(kc);
+            vista.getTxtDescripcion().addKeyListener(kd);
+            vista.getTxtDescrip_Act().addKeyListener(kda);
+            vista.getTxtPrecio().addKeyListener(kp);
+            vista.getTxtCod_Act().addKeyListener(kca);
+            vista.getTxtNombre_Act().addKeyListener(kna);
+            vista.getTxtPrecio_Act().addKeyListener(kpa);
+        
     }
 
+    
     private void grabarServicio() {
         
         if ( vista.getTxtCodigo().getText().equals("") || vista.getTxtNombre().getText().equals("")|| vista.getTxtDescripcion().getText().equals("")|| vista.getTxtPrecio().getText().equals("")) {

@@ -61,6 +61,17 @@ public class ControladorJuridica {
             }
         };
         vista.getTxtbuscar().addKeyListener(kl);
+        
+
+          vista.getTxtruc().addKeyListener(krj);
+          vista.getTxtnombres().addKeyListener(knj);
+          vista.getTxtapellidos().addKeyListener(kaj);
+          vista.getTxtrazon().addKeyListener(krsj);
+          vista.getTxtdireccion().addKeyListener(kdj);
+          vista.getTxtcorreo().addKeyListener(kcorj);
+          vista.getTxtcelular().addKeyListener(kcelj);
+          vista.getTxttelefono().addKeyListener(ktj);
+          vista.getTxtsocios().addKeyListener(ksj);
             
         
       }
@@ -283,5 +294,210 @@ public class ControladorJuridica {
         }
         return true;
     }
+    
+    KeyListener krj = new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent ke) {
+                
+                   char ruc_jur = ke.getKeyChar();
+                if ((ruc_jur < '0' | ruc_jur > '9') | (vista.getTxtruc().getText().length() >= 13)) {
+                    ke.consume();
+                }
+            
+            }
+            
+            @Override
+            public void keyPressed(KeyEvent ke) {
+
+            }
+
+            @Override
+            public void keyReleased(KeyEvent ke) {
+                cargaLista(vista.getTxtbuscar().getText());
+            }
+
+        };
+    
+    KeyListener knj = new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent ke) {
+                
+                char nom_jur = ke.getKeyChar();
+               if (((nom_jur < 'a' | nom_jur > 'z') & (nom_jur < 'A' | nom_jur > 'Z') & (nom_jur!=45)& (nom_jur != KeyEvent.VK_SPACE)) | (vista.getTxtnombres().getText().length() >= 50)) {
+                    ke.consume();
+                }
+            
+            }
+            
+            @Override
+            public void keyPressed(KeyEvent ke) {
+
+            }
+
+            @Override
+            public void keyReleased(KeyEvent ke) {
+                cargaLista(vista.getTxtbuscar().getText());
+            }
+
+        };
+    
+    KeyListener kaj = new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent ke) {
+                
+                char ape_jur = ke.getKeyChar();
+               if (((ape_jur < 'a' | ape_jur > 'z') & (ape_jur < 'A' | ape_jur > 'Z') & (ape_jur!=45)& (ape_jur != KeyEvent.VK_SPACE)) | (vista.getTxtapellidos().getText().length() >= 50)) {
+                    ke.consume();
+                }
+            
+            }
+            
+            @Override
+            public void keyPressed(KeyEvent ke) {
+
+            }
+
+            @Override
+            public void keyReleased(KeyEvent ke) {
+                cargaLista(vista.getTxtbuscar().getText());
+            }
+
+        };
+    
+    KeyListener krsj = new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent ke) {
+                
+                char razon = ke.getKeyChar();
+               if (((razon < 'a' | razon > 'z') & (razon < 'A' | razon > 'Z') & (razon!=45)& (razon != KeyEvent.VK_SPACE)) | (vista.getTxtrazon().getText().length() >= 150)) {
+                    ke.consume();
+                }
+            
+            }
+            
+            @Override
+            public void keyPressed(KeyEvent ke) {
+
+            }
+
+            @Override
+            public void keyReleased(KeyEvent ke) {
+                cargaLista(vista.getTxtbuscar().getText());
+            }
+
+        };
+    
+    KeyListener kdj = new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent ke) {
+                
+                char dir_jur = ke.getKeyChar();
+               if (((dir_jur < 'a' | dir_jur > 'z') & (dir_jur < 'A' | dir_jur > 'Z') & (dir_jur!=45)& (dir_jur != KeyEvent.VK_SPACE)) | (vista.getTxtdireccion().getText().length() >= 150)) {
+                    ke.consume();
+                }
+            
+            }
+            
+            @Override
+            public void keyPressed(KeyEvent ke) {
+
+            }
+
+            @Override
+            public void keyReleased(KeyEvent ke) {
+                cargaLista(vista.getTxtbuscar().getText());
+            }
+
+        };
+   
+    KeyListener kcorj = new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent ke) {
+                char correo_jur = ke.getKeyChar();
+        if (((correo_jur < 'a' | correo_jur > 'z') & (correo_jur < 'A' | correo_jur > 'Z') & (correo_jur < '0' | correo_jur > '9') & (correo_jur != 64) & (correo_jur != 46)) | (vista.getTxtcorreo().getText().length() >= 80)) {
+            ke.consume();
+        }
+            }
+            
+            @Override
+            public void keyPressed(KeyEvent ke) {
+
+            }
+
+            @Override
+            public void keyReleased(KeyEvent ke) {
+                cargaLista(vista.getTxtbuscar().getText());
+            }
+
+        };
+   
+   KeyListener ktj = new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent ke) {
+                
+                   char tel_jur = ke.getKeyChar();
+                if ((tel_jur < '0' | tel_jur > '9') | (vista.getTxttelefono().getText().length() >= 9)) {
+                    ke.consume();
+                }
+            
+            }
+            
+            @Override
+            public void keyPressed(KeyEvent ke) {
+
+            }
+
+            @Override
+            public void keyReleased(KeyEvent ke) {
+                cargaLista(vista.getTxtbuscar().getText());
+            }
+
+        };
+   
+   KeyListener kcelj = new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent ke) {
+                
+                   char celular = ke.getKeyChar();
+                if ((celular < '0' | celular > '9') | (vista.getTxtcelular().getText().length() >= 10)) {
+                    ke.consume();
+                }
+            
+            }
+            @Override
+            public void keyPressed(KeyEvent ke) {
+
+            }
+
+            @Override
+            public void keyReleased(KeyEvent ke) {
+                cargaLista(vista.getTxtbuscar().getText());
+            }
+
+        };
+   
+   
+   KeyListener ksj = new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent ke) {
+                
+                   char socios = ke.getKeyChar();
+                if ((socios < '0' | socios > '9') | (vista.getTxtsocios().getText().length() >= 5)) {
+                    ke.consume();
+                }
+            
+            }
+            
+            @Override
+            public void keyPressed(KeyEvent ke) {
+
+            }
+
+            @Override
+            public void keyReleased(KeyEvent ke) {
+                cargaLista(vista.getTxtbuscar().getText());
+            }
+
+        };
     
 }

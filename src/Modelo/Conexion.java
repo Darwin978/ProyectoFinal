@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 public class Conexion {
     private String url="jdbc:postgresql://localhost:5432/MUAS";
     private String user="postgres";
-    private String pass="1234";
+    private String pass="latacunga";
     
     private Connection con;
     
